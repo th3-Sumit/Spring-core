@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id= "fs" class = "com.spring.test.CourseFee"> 
+		<constructor-arg>
+			<map>
+				<entry key="Java" value="1000"></entry>
+				<entry key="Cpp" value= "500"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	
+	<bean id = "st" class = "com.spring.test.Student">
+		<constructor-arg value = "1"/>
+		<constructor-arg value = "Sumit singh"></constructor-arg>
+		<constructor-arg>
+		<list>
+		<value>Java</value>
+		<value>Cpp</value>
+		<value>Python</value>
+		</list>
+		</constructor-arg>
+		<constructor-arg ref="fs"></constructor-arg>
+	</bean>
+	
+
+</beans>
